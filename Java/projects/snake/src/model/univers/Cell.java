@@ -1,6 +1,7 @@
 package model.univers;
 
 import java.awt.Point;
+import java.util.Date;
 
 public class Cell {
 
@@ -11,6 +12,8 @@ public class Cell {
 	private boolean isSnake;
 	
 	private boolean isSnakeHead;
+	
+	private long foodLifeTime; 
 	
 	public Cell() {
 		this.position = new Point(0,0);
@@ -26,12 +29,20 @@ public class Cell {
 		this.isSnakeHead = isSnakeHead;
 	}
 	
+	public long getfooLifeTime() {
+		return foodLifeTime;
+	}
+	
 	public Point getPosition() {
 		return position;
 	}
 	
-	public void setPosition(Point position) {
-		this.position = position;
+	public void setX(int x) {
+		this.position.x = x;
+	}
+	
+	public void sety(int y) {
+		this.position.y = y;
 	}
 	
 	public boolean isFood() {
@@ -39,6 +50,10 @@ public class Cell {
 	}
 	
 	public void setFood(boolean isFood) {
+		if(isFood) {
+			this.foodLifeTime = new java.util.Date().getTime();
+		}
+		
 		this.isFood = isFood;
 	}
 	

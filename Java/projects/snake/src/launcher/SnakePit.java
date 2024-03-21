@@ -4,6 +4,7 @@ public class SnakePit {
 
 	public static void main(String[] args) {
 		
+		
 	}
 
 }

@@ -3,7 +3,6 @@ package model;
 import java.awt.Point;
 import java.util.List;
 
-import model.univers.Cell;
 import model.univers.Directions;
 
 public class Snake {
@@ -18,13 +17,16 @@ public class Snake {
 	private Directions direction;
 	
 	
+	public Snake() {
+		
+	}
 	
-	public Snake(Point head, List<Point> body, int pitSize, Directions direction) {
+	public Snake(Point head, List<Point> body, int pitSize) {
 		super();
 		this.head = head;
 		this.body = body;
 		this.pitSize = pitSize;
-		this.direction = direction;
+		this.direction = null;
 	}
 	
 	public void eat() {
@@ -51,9 +53,29 @@ public class Snake {
 	}
 	
 	
-	public void move(Point newPostion) {
+	public void move() {
+		Point newPosition;
+		switch(direction) {
+		case NORTH:
+			newPosition = new Point(head.x + 1, head.y);
+			break;
+		case WEST:
+			newPosition = new Point(head.x, head.y - 1);
+			break;
+		case EST:
+			newPosition = new Point(head.x, head.y + 1);
+			break;
+		case SOUTH:
+			newPosition = new Point(head.x - 1, head.y);
+			break;
+		default:
+			newPosition = head;
+		}
+		
+		//add case snake out of bound 
+		
 		this.bodyFollowHead(new Point(this.head.getLocation().x, this.head.getLocation().y));
-		moveHead(newPostion);
+		moveHead(newPosition);
 	}
 	
 	private void bodyFollowHead(Point oldHead) {
