@@ -1,6 +1,6 @@
 ---
 sticker: emoji//2696-fe0f
-aliases:
+aliases: 
 ---
 
 [[Les bases de Laravel]]
