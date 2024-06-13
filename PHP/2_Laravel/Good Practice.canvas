@@ -37,7 +37,7 @@
 		{"id":"ab7078c301278642","type":"text","text":"Utilisable uniquement en tant que variable local /conf","x":-2015,"y":834,"width":254,"height":145,"color":"4"},
 		{"id":"932de93fbfb10bb4","type":"file","file":"cours/Php/2_Laravel/BDD & ORM.md","x":-1240,"y":874,"width":400,"height":400},
 		{"id":"b0611a3252e93ca8","type":"text","text":"Production","x":-1635,"y":949,"width":250,"height":60,"color":"1"},
-		{"id":"d2775c9c2e0df3fe","type":"text","text":".env","x":-600,"y":160,"width":250,"height":60,"color":"4"},
+		{"id":"d2775c9c2e0df3fe","type":"text","text":".env","x":-600,"y":80,"width":250,"height":140,"color":"4"},
 		{"id":"efeeb586b208e431","type":"text","text":"Chiffrement du MDP bcrypt()","x":421,"y":-99,"width":250,"height":60},
 		{"id":"411e3e33a4a62495","type":"text","text":"Image storage verif","x":81,"y":327,"width":250,"height":60},
 		{"id":"a29e5c3a83b53e78","type":"text","text":"Nom des classes / table BDD","x":-1385,"y":-350,"width":250,"height":60},
@@ -51,8 +51,8 @@
 		{"id":"0b6687143640334a","type":"text","text":"$_POST","x":1100,"y":-690,"width":124,"height":60,"color":"5"},
 		{"id":"01d8e888b01d0cce","type":"text","text":"Index","x":1339,"y":-960,"width":130,"height":60,"color":"2"},
 		{"id":"a138510113e1a13a","type":"text","text":"Show","x":1331,"y":-834,"width":138,"height":60},
-		{"id":"659338a22a601d64","x":-864,"y":-741,"width":250,"height":60,"type":"text","text":".git ingore"},
-		{"id":"a91ae63c5d7baee7","x":-1092,"y":-899,"width":250,"height":60,"type":"text","text":"vendor\n"}
+		{"id":"659338a22a601d64","type":"text","text":".git ingore","x":-864,"y":-741,"width":250,"height":60},
+		{"id":"a91ae63c5d7baee7","type":"text","text":"vendor\n","x":-1092,"y":-899,"width":250,"height":60}
 	],
 	"edges":[
 		{"id":"4d3b1f91194324d2","fromNode":"31b5761233559679","fromSide":"bottom","toNode":"43dc7b270903a3cc","toSide":"top","color":"2"},
