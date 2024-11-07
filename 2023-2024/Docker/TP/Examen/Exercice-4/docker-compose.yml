@@ -1,0 +1,30 @@
+version: "3.3"
+
+services:
+  mysql-examen:
+    build: 
+      context: ./image-sql
+    image: image-my-sql
+    restart: always
+    hostname: mysql
+    env_file:
+      - ./.env
+    ports:
+      - "50778:3306"
+  
+  php-api:
+    build: 
+      context: ./image-api
+    image: image-my-api
+    restart: always
+    hostname: app-api
+    env_file:
+      - ./.env
+    ports:
+      - "8080:80"
+  
+  
+
+
+
+  

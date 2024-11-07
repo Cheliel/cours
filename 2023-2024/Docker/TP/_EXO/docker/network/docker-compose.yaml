@@ -1,0 +1,35 @@
+version: '3'
+
+services: 
+  wapp:
+    image: cheliel/site-args:latest
+    ports: 
+      - "8081:80"
+    networks:
+      - my-spider-work
+  
+  my-ninix:
+    image: nginx:latest
+    networks:
+      - my-spider-work
+    ports:
+      - "8082:80"
+  
+networks:
+  my-spider-work:
+    driver: bridge
+    ipam:
+      driver: default
+      config: 
+        - gateway: "10.71.122.14"
+          subnet: 10.71.122.0/16
+          ip_range: 10.71.122.0/24
+
+
+    
+
+
+
+
+
+

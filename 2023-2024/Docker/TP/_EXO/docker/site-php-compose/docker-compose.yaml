@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+  apache: 
+    image: cheliel/site-args
+    ports:
+      - "8080:80"
+    
+    volumes: 
+      - /Users/cheliel/Documents/CCI/2023-2024/Docker/TP/data
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-caddy
+  labels:
+    app: app-caddy
+spec: 
+  containers: 
+  - name: cont-caddy
+    image: caddy:latest
+    imagePullPolicy: IfNotPresent
+    ports:
+    - containerPort: 80

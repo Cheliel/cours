@@ -1,0 +1,40 @@
+version: '3'
+
+services: 
+  mariadb:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: composeDB
+      MYSQL_USER: cheliel
+      MYSQL_PASSWORD: azerty
+    ports: 
+      - "3306:3306"
+    volumes:
+      - /Users/cheliel/Documents/CCI/2023-2024/Docker/TP/data
+  
+  redmine:
+    image: redmine:latest
+    restart: always
+    ports:
+      - 8081:3000
+    environment:
+      REDMINE_DB_MYSQL: redmiDB
+      REDMINE_DB_PASSWORD: 12345
+      REDMINE_SECRET_KEY_BASE: azerty
+
+  apache: 
+    image: my-word-press:latest
+    ports:
+      - "8080:80"
+    
+    volumes: 
+      - ./html:/var/www/html
+    
+    depends_on:
+      - mariadb
+
+
+
+
+

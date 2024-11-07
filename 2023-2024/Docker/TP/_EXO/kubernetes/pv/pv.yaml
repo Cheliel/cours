@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: hostpath-pv
+  labels:
+    disk: ssd
+spec: 
+  capacity:
+    storage: 5Gi
+  storageClassName: ssd
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  hostPath: # emplacement sur le disque local 
+    path: "/host_mnt/Users/cheliel/Documents/share"
+  persistentVolumeReclaimPolicy: Delete
+
+
+
+

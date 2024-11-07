@@ -1,0 +1,16 @@
+version: '3'
+
+services: 
+  apache: 
+    build:
+      context: ./img1
+    image: mon-image
+
+
+
+
+
+
+
+
+

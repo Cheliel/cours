@@ -1,0 +1,31 @@
+version: '3'
+
+services: 
+  examen-docker:
+    build: 
+      context: ./image-encoding-word
+    image: encoding-word
+    ports: 
+      - "8080:80"
+    networks:
+      mynet:
+        ipv4_address: 10.71.123.20
+  
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      driver: default
+      config: 
+        - gateway: 10.71.123.255
+          subnet: 10.71.123.0/16
+
+
+
+    
+
+
+
+
+
+

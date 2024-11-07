@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debian-test
+  labels:
+    app: exposed
+spec: 
+  containers: 
+  - name: cont-debian-test
+    image: debian:latest
+    ports:
+    - containerPort: 80 

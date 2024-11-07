@@ -1,0 +1,31 @@
+# Utiliser l'image Debian
+FROM debian:bookworm-slim
+
+# Mettre à jour les paquets et installer Apache, PHP et les outils nécessaires
+RUN apt-get update && \
+    apt-get install -y apache2 php libapache2-mod-php && \
+    rm -rf /var/lib/apt/lists/*
+
+# Activer le module Apache pour PHP
+RUN a2enmod php8.2
+
+# Définir la variable d'environnement "prenom"
+# ARG --> variable que l'on peut utiliser lors du buildtime
+ARG ARG_PRENOM
+# ENV --> variable d'environnement disponible lors du buildtime + runtime
+ENV ENV_PRENOM=$ARG_PRENOM
+
+# Créer un répertoire pour les fichiers du site
+WORKDIR /var/www/html
+
+# Créer un fichier PHP qui lit la variable d'environnement
+RUN echo "<?php echo 'Votre prenom est ' . getenv('ENV_PRENOM'); ?>" > index.php 
+
+# Suppresion fichier html par defaut
+RUN rm index.html
+
+# Exposer le port 80
+EXPOSE 80
+
+# Commande pour démarrer Apache en mode "foreground"
+CMD ["apache2ctl", "-D", "FOREGROUND"]

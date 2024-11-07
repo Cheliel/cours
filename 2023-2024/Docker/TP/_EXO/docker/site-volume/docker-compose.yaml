@@ -1,0 +1,26 @@
+version: '3'
+
+services: 
+  wapp:
+    image: nginx:latest
+    ports: 
+      - "8080:80"
+    
+    volumes:
+      - data_volume:/usr/share/nginx/html
+
+  wapp2:
+    image: nginx:latest
+    ports: 
+      - "8081:80"
+    
+    volumes:
+      - data_volume:/usr/share/nginx/html
+
+volumes: 
+  data_volume:
+
+
+
+
+

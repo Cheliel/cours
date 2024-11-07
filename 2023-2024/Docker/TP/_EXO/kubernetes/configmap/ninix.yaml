@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-ninix
+  labels:
+    app: monsite
+spec: 
+  containers: 
+  - name: cont-ninix
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: config-volume
+      mountPath: /usr/share/nginx/html
+  volumes: 
+  - name: config-volume
+    configMap:
+      name: monsite 
+
+--- 
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-monsite-nodeport
+spec:
+  type: NodePort
+  selector:
+    app: monsite
+  ports:
+    # PORT =>  Port sur lequel le service écoute
+    # TARGET PORT => Port sur lequel les pods répondent
+    - nodePort: 31000
+      port: 8080
+      targetPort: 80

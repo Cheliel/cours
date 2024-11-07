@@ -1,0 +1,12 @@
+helm repo add nginx https://helm.nginx.com/stable
+helm install my-nginx-ingress nginx/nginx-ingress --version 1.1.0
+	-> Create pods apache, nginx
+	-> Create clusterip svc-apache, svc-nginx
+
+Create pods and clusterips
+
+kubectl run mycurlpod --image=curlimages/curl -i --tty -- sh
+kubectl apply -f "6.1 - Ingress Services.yaml"
+
+
+Modifier le fichier hosts dans "C:\Windows\System32\drivers\etc" | /private/etc/hosts en ajoutant "127.0.0.1 nginx.local" et "127.0.0.1 apache.local"

@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: ingress
+metadata:
+  name: ingress-service-php
+spec:
+  rules:
+  - host: php.devx
+    http:
+      paths: 
+      - path: / 
+        pathType: Prefix
+        backend:
+          service: 
+            name: service
+            port:
+              number: 8080
+  ingressClassName: nginx # must refer to subDomain 

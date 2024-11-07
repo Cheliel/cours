@@ -1,0 +1,17 @@
+version: '3'
+services:
+  currency-converter:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3081:5000"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - ms-cci
+
+networks:
+  ms-cci:
+    external: true
